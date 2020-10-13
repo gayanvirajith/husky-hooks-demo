@@ -6,7 +6,11 @@ module.exports = {
   },
   parserPreset: {
     parserOpts: {
+      referenceActions: null, // https://github.com/conventional-changelog/commitlint/issues/372#issuecomment-418519784
       issuePrefixes: ['SWA-', 'SWA2-']
     }
-  }
+  },
+  ignores: [
+      (message) => message.includes('npm build') // ignore a commit with `npm build`
+  ]
 }
